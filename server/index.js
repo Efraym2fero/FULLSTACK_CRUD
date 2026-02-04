@@ -15,13 +15,14 @@ app.use("/getUser",router);
 app.use("/update",router);
 app.use("/delete",router);
 
+const PORT = process.env.PORT || 5000;
 
 
 mongoose.connect(process.env.DATABASE_URL)
 .then(()=>{
     console.log("DB connected")
-    app.listen(3000,()=>{
-    console.log("server on port 3000")})
+    app.listen(PORT,()=>{
+    console.log("server on port "+PORT)})
 })
 .catch(()=>{console.log("DB faild to connect")})
 
